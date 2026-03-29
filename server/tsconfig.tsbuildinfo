@@ -1,0 +1,1 @@
+{"root":["./src/index.ts","./src/config/db.ts","./src/controllers/bookingcontroller.ts","./src/controllers/buscontroller.ts","./src/middleware/errorhandler.ts","./src/models/booking.ts","./src/models/bus.ts","./src/routes/bookings.ts","./src/routes/buses.ts","./src/seed/seeddata.ts"],"version":"6.0.2"}
