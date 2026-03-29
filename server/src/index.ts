@@ -21,15 +21,17 @@ const allowedOrigins = [
     "https://transitly-api.onrender.com",
 ];
 
-const corsOptions = {
-    origin: (origin, callback) => {
+import { CorsOptions, CorsRequestCallback } from "cors";
+
+const corsOptions: CorsOptions = {
+    origin: ((origin, callback) => {
         if (!origin) return callback(null, true); // allow server-to-server / sandboxed requests
         const allowed = allowedOrigins.some((o) =>
             typeof o === "string" ? o === origin : o.test(origin)
         );
         if (allowed) return callback(null, true);
         return callback(new Error(`CORS: origin ${origin} not allowed`));
-    },
+    }) as CorsRequestCallback,
     credentials: true,
 };
 
