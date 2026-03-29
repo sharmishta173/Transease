@@ -81,7 +81,7 @@ TransEase/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/TransEase.git
+git clone https://github.com/sharmishta173/TransEase.git
 cd TransEase
 ```
 
