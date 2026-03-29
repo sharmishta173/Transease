@@ -1,4 +1,4 @@
-# Transitly
+# TransEase
 
 A full-stack bus ticket booking application built with React and Node.js. Transitly lets passengers search routes, select seats interactively, enter passenger details, and receive a confirmed booking — all through a single, cohesive flow.
 
