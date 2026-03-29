@@ -1,6 +1,6 @@
-# Transitly
+# TransEase
 
-A full-stack bus ticket booking application built with React and Node.js. Transitly lets passengers search routes, select seats interactively, enter passenger details, and receive a confirmed booking — all through a single, cohesive flow.
+A full-stack bus ticket booking application built with React and Node.js. TransEase lets passengers search routes, select seats interactively, enter passenger details, and receive a confirmed booking — all through a single, cohesive flow.
 
 ---
 
@@ -43,7 +43,7 @@ A full-stack bus ticket booking application built with React and Node.js. Transi
 ## Project Structure
 
 ```
-Transitly/
+TransEase/
 ├── client/
 │   └── src/
 │       ├── api/               # Axios API calls
@@ -81,8 +81,8 @@ Transitly/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/transitly.git
-cd transitly
+git clone https://github.com/your-username/TransEase.git
+cd TransEase
 ```
 
 ### 2. Configure environment variables

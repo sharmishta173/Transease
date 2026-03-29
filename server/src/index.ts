@@ -12,7 +12,32 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // middleware
-app.use(cors());
+const allowedOrigins = [
+    "http://localhost:5173",
+    "https://trans-ease.vercel.app",
+    "https://www.trans-ease.vercel.app",
+    /https:\/\/trans-ease.*\.vercel\.app$/,
+    /https:\/\/.*\.vercel\.app$/,
+    "https://transitly-api.onrender.com",
+];
+
+const corsOptions = {
+    origin: (origin, callback) => {
+        if (!origin) return callback(null, true); // allow server-to-server / sandboxed requests
+        const allowed = allowedOrigins.some((o) =>
+            typeof o === "string" ? o === origin : o.test(origin)
+        );
+        if (allowed) return callback(null, true);
+        return callback(new Error(`CORS: origin ${origin} not allowed`));
+    },
+    credentials: true,
+};
+
+if (process.env.NODE_ENV === "production") {
+    app.use(cors(corsOptions));
+} else {
+    app.use(cors({ origin: true, credentials: true }));
+}
 app.use(express.json());
 
 // routes
