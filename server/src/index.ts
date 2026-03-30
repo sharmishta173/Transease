@@ -14,11 +14,7 @@ const PORT = process.env.PORT || 5000;
 // middleware
 const allowedOrigins = [
     "http://localhost:5173",
-    "https://trans-ease.vercel.app",
-    "https://www.trans-ease.vercel.app",
-    /https:\/\/trans-ease.*\.vercel\.app$/,
-    /https:\/\/.*\.vercel\.app$/,
-    "https://TransEase-api.onrender.com",
+    "https://transease-backend.onrender.com",
 ];
 
 import { CorsOptions } from "cors";
