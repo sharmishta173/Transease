@@ -18,7 +18,7 @@ const allowedOrigins = [
     "https://www.trans-ease.vercel.app",
     /https:\/\/trans-ease.*\.vercel\.app$/,
     /https:\/\/.*\.vercel\.app$/,
-    "https://transitly-api.onrender.com",
+    "https://TransEase-api.onrender.com",
 ];
 
 import { CorsOptions } from "cors";
