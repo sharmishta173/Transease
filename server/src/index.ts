@@ -15,6 +15,8 @@ const PORT = process.env.PORT || 5000;
 const allowedOrigins: (string | RegExp)[] = [
     "http://localhost:5173",
     "https://transease-backend.onrender.com",
+    "https://trans-ease-tq5i.vercel.app",
+    "https://trans-ease.vercel.app"
 ];
 
 import { CorsOptions } from "cors";
@@ -41,6 +43,11 @@ app.use(express.json());
 // routes
 app.use("/api/buses", busRoutes);
 app.use("/api/bookings", bookingRoutes);
+
+// Compatibility: if the frontend accidentally prefixes `/api` twice
+// (e.g. `/api/api/buses`), still serve the same endpoints.
+app.use("/api/api/buses", busRoutes);
+app.use("/api/api/bookings", bookingRoutes);
 
 // health check route — useful for Render deployment later
 app.get("/", (_req, res) => {
