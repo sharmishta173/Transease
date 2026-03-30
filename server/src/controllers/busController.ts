@@ -48,8 +48,12 @@ export const getBuses = async (req: Request, res: Response): Promise<void> => {
 
     let buses = await Bus.find(filter).lean();
 
-    if (departureSlot) {
-      const slot = SLOT_RANGES[(departureSlot as string).toLowerCase()];
+    const normalizedDepartureSlot = Array.isArray(departureSlot)
+      ? departureSlot[0]
+      : departureSlot;
+
+    if (typeof normalizedDepartureSlot === "string" && normalizedDepartureSlot.trim()) {
+      const slot = SLOT_RANGES[normalizedDepartureSlot.trim().toLowerCase()];
       if (slot) {
         buses = buses.filter((bus) => {
           const firstStop = bus.stops[0];
