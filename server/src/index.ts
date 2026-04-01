@@ -14,14 +14,18 @@ const PORT = process.env.PORT || 5000;
 // middleware
 const allowedOrigins: (string | RegExp)[] = [
     "http://localhost:5173",
-    "https://transease-backend-67tt.onrender.com/",
-    "https://trans-ease-tq5i.vercel.app",
-    "https://trans-ease.vercel.app"
 ];
 
-// For deployed environments, we prefer reliability over strict origin matching.
-// This ensures the Vercel frontend can always reach the Render API.
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors({
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+            callback(null, true);
+        } else {
+            callback(new Error("Not allowed by CORS"));
+        }
+    },
+    credentials: true 
+}));
 app.use(express.json());
 
 // routes
