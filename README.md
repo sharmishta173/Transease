@@ -11,7 +11,6 @@ A full-stack bus ticket booking application built with React and Node.js. TransE
 - Interactive seat map with Normal, Semi-Sleeper, and Sleeper categories
 - Per-passenger detail collection (name, age, gender)
 - Booking confirmation with a unique booking ID and full trip summary
-- Responsive dark-mode UI with glassmorphism design
 
 ---
 
