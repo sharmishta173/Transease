@@ -232,10 +232,10 @@ const formatTimeAndDate = (baseDateStr: string, startHour: number, startMinute: 
 
 const generateBuses = () => {
     const generatedBuses = [];
-    // Next 25 days starting 2026-03-26
+    // Next 40 days starting from today (2026-04-29)
     const dates = [];
-    let start = new Date("2026-03-26T00:00:00Z");
-    for (let i = 0; i < 25; i++) {
+    let start = new Date("2026-04-29T00:00:00Z");
+    for (let i = 0; i < 40; i++) {
         dates.push(start.toISOString().split("T")[0]);
         start.setDate(start.getDate() + 1);
     }
@@ -271,7 +271,7 @@ const generateBuses = () => {
                 if (seatType === "normal") totalSeats = 40;
                 
                 // Realistic Booking logic (closer dates have more bookings)
-                const daysUntilDeparture = new Date(date).getTime() - new Date("2026-03-26").getTime();
+                const daysUntilDeparture = new Date(date).getTime() - new Date("2026-04-29").getTime();
                 let bookedPercentage = Math.random() * 0.4 + 0.1; // 10% to 50%
                 if (daysUntilDeparture < 3 * 86400000) bookedPercentage += 0.4; // Last minute rush up to 90% booked
                 
