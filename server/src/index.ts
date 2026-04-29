@@ -14,6 +14,7 @@ const PORT = process.env.PORT || 5000;
 // middleware
 const allowedOrigins: (string | RegExp)[] = [
     "http://localhost:5173",
+    "https://transease-nine.vercel.app",
     "https://transease-sigma.vercel.app",
     "https://transease-sharmishtas-projects-f2328081.vercel.app",
 ];
